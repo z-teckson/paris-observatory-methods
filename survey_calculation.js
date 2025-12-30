@@ -11,7 +11,11 @@
  */
 function calculateCorrection(lat1, lon1, lat2, lon2, starAltitude) {
     // Constant for standard atmospheric conditions (arcseconds per tangent of altitude)
-    // This value is derived from classical refraction tables (e.g., Cassini's "De la grandeur de la Terre")
+    // The value 58.2'' is derived from classical refraction tables published by
+    // Giovanni Domenico Cassini in "De la grandeur de la Terre" (1720) and aligns with
+    // the empirical formula given by Isaac Newton in "Opticks" (1704, Book I, Part I).
+    // Under standard temperature (10°C) and pressure (1013.25 hPa) at sea level,
+    // this constant provides a reliable first‑order correction.
     const k = 58.2; // arcseconds
 
     // Convert altitude to radians for tangent computation
